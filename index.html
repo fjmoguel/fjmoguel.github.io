@@ -11,6 +11,8 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
         }
+
+        /* Slideshow Styling */
         .slideshow-container {
             position: relative;
             max-width: 100%;
@@ -19,6 +21,7 @@
             overflow: hidden;
             z-index: 1;
         }
+
         .slides {
             display: none;
             width: 100%;
@@ -27,8 +30,7 @@
             background-size: cover;
         }
 
-         /* Intro Section Styling - Overlay on the slideshow */
-          /* Intro Section Styling - Overlay on the slideshow */
+        /* Intro Section Styling - Overlay on the slideshow */
         .intro {
             position: absolute;
             top: 80px; /* Just below the navbar */
@@ -38,6 +40,8 @@
             color: white; /* White text to contrast with background */
             font-size: 24px;
             z-index: 10; /* Higher than the slideshow */
+            background: rgba(0, 0, 0, 0.5); /* Optional: Transparent background for better text readability */
+            padding: 20px;
         }
 
         .intro h1 {
@@ -45,6 +49,7 @@
             margin-bottom: 10px;
         }
 
+        /* Navigation Bar Styling */
         ul.nav-bar {
             list-style-type: none;
             background-color: #d3d3d3;
@@ -75,12 +80,21 @@
             color: black;
         }
 
+        /* Content Section Overlay */
         .content {
-            padding: 40px;
+            position: absolute;
+            top: 200px; /* Move down slightly below the intro text */
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white; /* Make text white to stand out */
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.5); /* Optional transparent background */
+            padding: 20px;
         }
 
-         /* Footer Styling */
-         footer {
+        /* Footer Styling */
+        footer {
             text-align: center;
             padding: 10px 0;
             background-color: #d3d3d3;
@@ -89,7 +103,6 @@
             width: 100%;
             bottom: 0;
         }
-
     </style>
 </head>
 <body>
@@ -106,13 +119,15 @@
         <li><a href="https://fjmoguel.github.io/assignments">Assignments</a></li>
     </ul>
 
-    <div class="intro"></div>
-    <h1>Hello, my name is Francisco José Moguel Porte Petit, welcome to my personal web page!</h1>
-    <p>You will find all sections on the toolbar at the top. Once again, welcome!</p>
-</div>
-
     <!-- Slideshow Section -->
     <div class="slideshow-container">
+        <!-- Intro Section Overlaying the Slideshow -->
+        <div class="intro">
+            <h1>Hello, my name is Francisco José Moguel Porte Petit, welcome to my personal web page!</h1>
+            <p>You will find all sections on the toolbar at the top. Once again, welcome!</p>
+        </div>
+
+        <!-- Slideshow Images -->
         <!-- Slide 1 -->
         <div class="slides" style="background-image: url('images/IMG_4217 2.jpg');"></div>
         <!-- Slide 2 -->
@@ -181,7 +196,7 @@
         <div class="slides" style="background-image: url('images/Screenshot 2024-09-11 at 1.32.33 p.m..png');"></div>
     </div>
 
-    <!-- Content Section (About Me) -->
+    <!-- Content Section Overlaying the Slideshow -->
     <div class="content">
         <h2>About Me</h2>
         <p>
@@ -218,3 +233,4 @@
     </script>
 </body>
 </html>
+
