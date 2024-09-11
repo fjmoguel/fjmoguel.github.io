@@ -25,10 +25,54 @@
         a:hover {
             text-decoration: underline;
         }
+        ul.nav-bar {
+            list-style-type: none;
+            background-color: #d3d3d3;
+            padding: 0;
+            margin: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        ul.nav-bar li {
+            margin: 0 15px;
+        }
+
+        ul.nav-bar li a {
+            display: block;
+            color: #4682b4;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        ul.nav-bar li a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .content {
+            padding-top: 60px;
+        }
     </style>
 </head>
 <body>
-    <h1>Assignments</h1>
+    <!-- Work Experience Section -->
+    <h1>My assignments</h1>
+    <!-- Navigation Bar -->
+    <ul class="nav-bar">
+        <li><a href="https://fjmoguel.github.io/work-experience">Work Experience</a></li>
+        <li><a href="https://fjmoguel.github.io/projects">Projects</a></li>
+        <li><a href="https://fjmoguel.github.io/contact.html">Contact</a></li>
+        <li><a href="https://fjmoguel.github.io/running.html">Running</a></li>
+        <li><a href="https://fjmoguel.github.io/photography.html">Photography</a></li>
+        <li><a href="https://fjmoguel.github.io/music.html">Music</a></li>
+        <li><a href="https://fjmoguel.github.io/assignments.html">Assignments</a></li>
+    </ul>
 
     <!-- Dummy Assignment 0 -->
     <div class="assignment">
