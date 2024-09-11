@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco Moguel - Photography</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            height: 70vh;
+            overflow: hidden;
+        }
+        .slides {
+            display: none;
+            width: 100%;
+            height: 70vh;
+            background-position: center;
+            background-size: cover;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Photography</h1>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <!-- Add 20 photo slides, replace 'path-to-photoX.jpg' with actual image paths -->
+        <div class="slides" style="background-image: url('path-to-photo1.jpg');"></div>
+        <div class="slides" style="background-image: url('path-to-photo2.jpg');"></div>
+        <div class="slides" style="background-image: url('path-to-photo3.jpg');"></div>
+        <!-- Continue adding more slides up to 20 -->
+    </div>
+
+    <!-- Links to Instagram and VSCO -->
+    <ul>
+        <li>Instagram: <a href="https://www.instagram.com/animanaturae_/" target="_blank">animanaturae_</a></li>
+        <li>VSCO: <a href="https://vsco.co/pacomoguelp" target="_blank">VSCO</a></li>
+    </ul>
+
+    <!-- Slideshow Script -->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex - 1].style.display = "block";  
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+    </script>
+</body>
+</html>
