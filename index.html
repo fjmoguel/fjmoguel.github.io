@@ -17,6 +17,7 @@
             margin: auto;
             height: 100vh;
             overflow: hidden;
+            z-index: 1;
         }
         .slides {
             display: none;
@@ -25,27 +26,20 @@
             background-position: center;
             background-size: cover;
         }
-        .content {
-            position: absolute;
-            bottom: 50px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            color: white;
-            font-size: 24px;
-        }
 
          /* Intro Section Styling - Overlay on the slideshow */
-         .intro {
+          /* Intro Section Styling - Overlay on the slideshow */
+        .intro {
             position: absolute;
-            top: 70px; /* Slightly below the navbar */
+            top: 80px; /* Just below the navbar */
             left: 0;
             right: 0;
             text-align: center;
-            color: white; /* Text color to stand out */
+            color: white; /* White text to contrast with background */
             font-size: 24px;
-            z-index: 100; /* To make sure it appears over the slideshow */
+            z-index: 10; /* Higher than the slideshow */
         }
+
         .intro h1 {
             font-size: 36px;
             margin-bottom: 10px;
@@ -82,7 +76,7 @@
         }
 
         .content {
-            padding-top: 60px;
+            padding: 40px;
         }
 
          /* Footer Styling */
@@ -111,6 +105,11 @@
         <li><a href="https://fjmoguel.github.io/music">Music</a></li>
         <li><a href="https://fjmoguel.github.io/assignments">Assignments</a></li>
     </ul>
+
+    <div class="intro"></div>
+    <h1>Hello, my name is Francisco José Moguel Porte Petit, welcome to my personal web page!</h1>
+    <p>You will find all sections on the toolbar at the top. Once again, welcome!</p>
+</div>
 
     <!-- Slideshow Section -->
     <div class="slideshow-container">
@@ -180,11 +179,6 @@
         <div class="slides" style="background-image: url('images/IMG_8633 2.JPG');"></div>
         <!-- Slide for Intro -->
         <div class="slides" style="background-image: url('images/Screenshot 2024-09-11 at 1.32.33 p.m..png');"></div>
-    </div>
-
-    <div class="intro"></div>
-        <h1>Hello, my name is Francisco José Moguel Porte Petit, welcome to my personal web page!</h1>
-        <p>You will find all sections on the toolbar at the top. Once again, welcome!</p>
     </div>
 
     <!-- Content Section (About Me) -->
