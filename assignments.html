@@ -58,11 +58,22 @@
         .content {
             padding-top: 60px;
         }
+
+        .video-container {
+            margin: 20px 0;
+        }
+
+        video {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 <body>
     <!-- Work Experience Section -->
-    <h1>My assignments</h1>
+    <h1>My Assignments</h1>
     <!-- Navigation Bar -->
     <ul class="nav-bar">
         <li><a href="https://fjmoguel.github.io/">Home</a></li>
@@ -83,11 +94,26 @@
         <a href="https://github.com/fjmoguel/fjmoguel-assignment-0" target="_blank">GitHub Link</a>
     </div>
 
-     <!-- Assignment 1 -->
-     <div class="assignment">
+    <!-- Assignment 1 -->
+    <div class="assignment">
         <h3>Assignment 1: Data Collection and Analysis</h3>
         <p>This assignment focused on collecting and analyzing elevator arrival data to determine the optimal location to wait in the CDS lobby, minimizing the expected walking distance to the next arriving elevator. I implemented solutions by calculating the average inter-arrival times of the elevators, determining probabilities based on these times, and using weighted averages to identify the best waiting position.</p>
         <a href="https://github.com/fjmoguel/fjmoguel-assignment-1" target="_blank">GitHub Link</a>
+    </div>
+
+    <!-- Assignment 2: KMeans Clustering Visualization Webpage -->
+    <div class="assignment">
+        <h3>Assignment 2: KMeans Clustering Visualization Webpage</h3>
+        <p>This assignment involved creating an interactive web application that demonstrates the KMeans clustering algorithm with various initialization methods. It allows users to visualize and interact with the clustering process.</p>
+        <a href="https://github.com/fjmoguel/kmeans-clustering-webpage" target="_blank">GitHub Repository</a>
+
+        <!-- Embedded Local Video -->
+        <div class="video-container">
+            <video controls>
+                <source src="videos/My Movie 1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
 
 </body>
