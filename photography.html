@@ -19,19 +19,17 @@
             padding: 10px;
             border-radius: 10px;
             display: inline-block;
-            margin-top: 60px; /* Moved the title lower */
+            margin-top: 100px; /* Moved the title lower */
         }
         .link-container {
-            text-align: center; /* Centering the social links */
-            margin: 20px 0;
+            text-align: center;
+            margin: 20px auto;
             background-color: black;
             padding: 10px;
             border-radius: 10px;
-            display: inline-block;
+            display: block;
             color: white;
             width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
         }
         .link-container a {
             color: white;
@@ -99,20 +97,16 @@
             transition: opacity 1s ease-in-out;
         }
 
-        /* Footer Links */
-        .black-square {
-            background-color: black;
-            padding: 10px;
-            border-radius: 10px;
-            color: white;
+        /* Footer Styling */
+        footer {
             text-align: center;
-            width: fit-content;
-            margin: 20px auto;
-        }
-
-        /* Adjust content padding for navigation bar */
-        .content {
-            padding-top: 60px;
+            padding: 10px 0;
+            background-color: #d3d3d3;
+            color: #4682b4;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1000;
         }
     </style>
 </head>
@@ -163,6 +157,11 @@
         <div class="slides" style="background-image: url('images/28322608_Unknown.JPG');"></div>
         <div class="slides" style="background-image: url('images/IMG_8291 2.HEIC');"></div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        © Francisco Moguel. All rights reserved.
+    </footer>
 
     <!-- Slideshow Script -->
     <script>
