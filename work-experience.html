@@ -10,13 +10,17 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #e0e0e0; /* Light grey background */
         }
         h1, h2 {
             color: #333;
         }
         .experience {
+            background-color: #ffffff; /* White background for each experience */
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px;
             margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
         }
         ul {
             list-style-type: disc;
@@ -55,13 +59,23 @@
         .content {
             padding-top: 60px;
         }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #d3d3d3;
+            color: #4682b4;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
-    <!-- Work Experience Section -->
-    <h1>Work Experience</h1>
-     <!-- Navigation Bar -->
-     <ul class="nav-bar">
+    <!-- Navigation Bar -->
+    <ul class="nav-bar">
         <li><a href="https://fjmoguel.github.io/">Home</a></li>
         <li><a href="https://fjmoguel.github.io/">About Me</a></li>
         <li><a href="https://fjmoguel.github.io/work-experience">Work Experience</a></li>
@@ -72,16 +86,22 @@
         <li><a href="https://fjmoguel.github.io/music">Music</a></li>
         <li><a href="https://fjmoguel.github.io/assignments">Assignments</a></li>
     </ul>
+
+    <!-- Work Experience Section -->
+    <h1>Work Experience</h1>
+
     <!-- Software Project Experience -->
     <div class="experience">
         <h2>Software Project Experience - CS 411 & CS 350</h2>
         <p><strong>Location:</strong> Boston University | <strong>Duration:</strong> 2022-2024</p>
         <ul>
-            <li>Developed a Twitter API application that scanned individual profiles to track followers and event interests using AI matching for optimized results.</li>
-            <li>Reduced code run time by optimizing the AI matching algorithm and improving data handling.</li>
-            <li>Worked on building software applications and problem sets in a variety of languages including Python, Java, and Go as part of advanced coursework in CS 350 (Systems Programming).</li>
+            <li>CS411: Academic Team Project (BUild Lab, Spark! and Innovate @ BU) - Summer 2023</li>
+            <li>Role: Software Engineering, Project Manager, and Architect</li>
+            <li>Led a team in the development of a web application integrating Twitter and Ticketmaster APIs using REST to enable users to track local events of interest via Google Maps.</li>
+            <li>CS350: Worked on distributed systems using RAFT algorithm, MapReduce, Amazon DB, and Yahoo Pnuts.</li>
+            <li>Developed a Twitter API application to track followers and event interests using AI matching for optimized results.</li>
+            <li>Reduced code run time by optimizing AI matching algorithms and data handling.</li>
             <li>Created and deployed code to track the MBTA subway system run and built analytics tools for large datasets.</li>
-            <li>Integrated multiple APIs to handle complex data sets and provided detailed results through user-friendly interfaces.</li>
         </ul>
     </div>
 
@@ -93,6 +113,15 @@
             <li>Managed 20 high-value bank accounts for Grupo Gigante, optimizing investments across stock and options markets with assets exceeding $150 million.</li>
             <li>Collaborated with the Losada family to refine investment strategies, resulting in a 5.1% asset value gain in Q2 2022.</li>
             <li>Delivered over 20 presentations on investment plans, enhancing clients’ understanding of stocks, mutual funds, and options markets.</li>
+        </ul>
+    </div>
+
+    <!-- Teacher Assistant Experience -->
+    <div class="experience">
+        <h2>Teacher Assistant - Instituto Tecnológico Autónomo de México</h2>
+        <p><strong>Location:</strong> Mexico City, Mexico | <strong>Duration:</strong> 2022</p>
+        <ul>
+            <li>Coordinated with faculty for event organization and used technological tools to enhance department data representation.</li>
         </ul>
     </div>
 
@@ -134,5 +163,10 @@
             <li>Coordinated with Agganis Arena and BU Athletics for event planning, ticket distribution, and marketing for 5000 students.</li>
         </ul>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        © Francisco Moguel. All rights reserved.
+    </footer>
 </body>
 </html>
