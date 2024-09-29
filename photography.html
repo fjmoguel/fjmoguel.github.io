@@ -10,112 +10,105 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #013220; /* Dark elegant green */
+            color: white;
         }
         h1 {
-            color: #333;
+            color: white;
+            background-color: black;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
         }
+        .link-container {
+            text-align: center;
+            margin: 20px 0;
+            background-color: black;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            color: white;
+        }
+        .link-container a {
+            color: white;
+            margin: 0 15px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .link-container a:hover {
+            text-decoration: underline;
+        }
+
         .slideshow-container {
             position: relative;
-            max-width: 100%;
+            max-width: 70%;
             margin: auto;
             height: 70vh;
-            overflow: hidden;
+            background-color: #ffffff;
+            border-radius: 15px; /* Smooth edges */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Polaroid-like frame effect */
+            padding: 10px;
         }
+
         .slides {
             display: none;
             width: 100%;
-            height: 70vh;
+            height: 100%;
             background-position: center;
-            background-size: cover;
-        }
-        a {
-            color: #1a73e8;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul.nav-bar {
-            list-style-type: none;
-            background-color: #d3d3d3;
-            padding: 0;
-            margin: 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            z-index: 1000;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
-        ul.nav-bar li {
-            margin: 0 15px;
+        /* Smooth transition */
+        .slides {
+            transition: opacity 1s ease-in-out;
         }
 
-        ul.nav-bar li a {
-            display: block;
-            color: #4682b4;
+        .black-square {
+            background-color: black;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
             text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-
-        ul.nav-bar li a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .content {
-            padding-top: 60px;
+            width: fit-content;
+            margin: 20px auto;
         }
     </style>
 </head>
 <body>
-    <!-- Work Experience Section -->
+    <!-- Title Section -->
     <h1>Photography</h1>
-    <!-- Navigation Bar -->
-    <ul class="nav-bar">
-        <li><a href="https://fjmoguel.github.io/">Home</a></li>
-        <li><a href="https://fjmoguel.github.io/">About Me</a></li>
-        <li><a href="https://fjmoguel.github.io/work-experience">Work Experience</a></li>
-        <li><a href="https://fjmoguel.github.io/projects">Projects</a></li>
-        <li><a href="https://fjmoguel.github.io/contact">Contact</a></li>
-        <li><a href="https://fjmoguel.github.io/running">Running</a></li>
-        <li><a href="https://fjmoguel.github.io/photography">Photography</a></li>
-        <li><a href="https://fjmoguel.github.io/music">Music</a></li>
-        <li><a href="https://fjmoguel.github.io/assignments">Assignments</a></li>
-    </ul>
-    <!-- Slideshow Section -->
-    <div class="slideshow-container">
-        <div class="slides" style="background-image: url('images/6E5A1833-3888-4062-A19E-26F60AD89F34 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/9CC625AE-667C-4C2A-9F85-4AA4A70872A0 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/28321968_Unknown 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/809450A7-C707-4BD5-A336-87CEEA50DA8D 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/28322464_Unknown 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/28322736_Unknown 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/28323152_Unknown 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/28586240_Unknown 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/28585392_Unknown 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/28586400_Unknown 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/28591984_Unknown 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/49692338-92FB-4EDE-8499-1D78F7E6C54D 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/A23ADF81-FA75-446E-9451-B251EF8A4295 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/gorilla.JPG');"></div>
-        <div class="slides" style="background-image: url('images/28586304_Unknown 2.JPG');"></div>
-        <div class="slides" style="background-image: url('images/IMG_6952 2.jpg');"></div>
-        <div class="slides" style="background-image: url('images/28585808_Unknown.JPG');"></div>
-        <div class="slides" style="background-image: url('images/28323168_Unknown.JPG');"></div>
-        <div class="slides" style="background-image: url('images/28322608_Unknown.JPG');"></div>
-        <div class="slides" style="background-image: url('images/IMG_8291 2.HEIC');"></div>
-        
+
+    <!-- Links Section -->
+    <div class="link-container">
+        Instagram: <a href="https://www.instagram.com/animanaturae_/" target="_blank">animanaturae_</a> |
+        VSCO: <a href="https://vsco.co/pacomoguelp" target="_blank">VSCO</a>
     </div>
 
-    <!-- Links to Instagram and VSCO -->
-    <ul>
-        <li>Instagram: <a href="https://www.instagram.com/animanaturae_/" target="_blank">animanaturae_</a></li>
-        <li>VSCO: <a href="https://vsco.co/pacomoguelp" target="_blank">VSCO</a></li>
-    </ul>
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <div class="slides" style="background-image: url('images/6E5A1833-3888-4062-A19E-26F60AD89F34 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/9CC625AE-667C-4C2A-9F85-4AA4A70872A0 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/28321968_Unknown 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/809450A7-C707-4BD5-A336-87CEEA50DA8D 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/28322464_Unknown 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/28322736_Unknown 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/28323152_Unknown 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/28586240_Unknown 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/28585392_Unknown 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/28586400_Unknown 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/28591984_Unknown 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/49692338-92FB-4EDE-8499-1D78F7E6C54D 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/A23ADF81-FA75-446E-9451-B251EF8A4295 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/gorilla.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/28586304_Unknown 2.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/IMG_6952 2.jpg'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/28585808_Unknown.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/28323168_Unknown.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/28322608_Unknown.JPG'); opacity: 0;"></div>
+        <div class="slides" style="background-image: url('images/IMG_8291 2.HEIC'); opacity: 0;"></div>
+    </div>
 
     <!-- Slideshow Script -->
     <script>
@@ -126,11 +119,11 @@
             let i;
             let slides = document.getElementsByClassName("slides");
             for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+                slides[i].style.opacity = 0;  
             }
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex - 1].style.display = "block";  
+            slides[slideIndex - 1].style.opacity = 1;  
             setTimeout(showSlides, 5000); // Change image every 5 seconds
         }
     </script>
