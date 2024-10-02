@@ -10,14 +10,11 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #000000;
+            color: white;
         }
         h1, h3 {
-            color: #333;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
+            color: #f0f0f0;
         }
         a {
             color: #1a73e8;
@@ -26,14 +23,9 @@
         a:hover {
             text-decoration: underline;
         }
-        .concert-videos video {
-            width: 100%;
-            max-width: 600px;
-            margin-bottom: 20px;
-        }
         ul.nav-bar {
             list-style-type: none;
-            background-color: #d3d3d3;
+            background-color: #333;
             padding: 0;
             margin: 0;
             position: fixed;
@@ -50,24 +42,58 @@
 
         ul.nav-bar li a {
             display: block;
-            color: #4682b4;
+            color: white;
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
         }
 
         ul.nav-bar li a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #555;
         }
 
         .content {
             padding-top: 60px;
         }
+
+        .logos {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logos img {
+            width: 30px;
+            margin-left: 10px;
+        }
+
+        .artist-links img {
+            width: 20px;
+            margin-left: 5px;
+        }
+
+        /* Grid display for artist list */
+        .artist-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .artist-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .artist-links img {
+            width: 20px;
+            margin-left: 5px;
+        }
+
     </style>
 </head>
 <body>
-    <!-- Work Experience Section -->
+    <!-- Music Space -->
     <h1>Music Space</h1>
     <!-- Navigation Bar -->
     <ul class="nav-bar">
@@ -81,52 +107,205 @@
         <li><a href="https://fjmoguel.github.io/music">Music</a></li>
         <li><a href="https://fjmoguel.github.io/assignments">Assignments</a></li>
     </ul>
-    <!-- Favorite Bands and Artists -->
-    <p>Here are some of my favorite bands and artists:</p>
-    <ul>
-        <li>Grateful Dead / Dead & Co</li>
-        <li>Pink Floyd</li>
-        <li>Noah Kahan</li>
-        <li>The Beatles</li>
-        <li>Eagles</li>
-        <li>José José</li>
-        <li>Juan Gabriel</li>
-        <li>Luis Miguel</li>
-        <li>Mumford & Sons</li>
-        <li>Sons of the East</li>
-        <li>AC/DC</li>
-        <li>Arctic Monkeys</li>
-        <li>Bad Bunny</li>
-        <li>Feid</li>
-        <li>U2</li>
-        <li>Frank Ocean</li>
-        <li>Genesis</li>
-        <li>Phil Collins</li>
-        <li>Maná</li>
-        <li>Bruce Springsteen</li>
-        <li>Creedence Clearwater Revival</li>
-        <li>Led Zeppelin</li>
-    </ul>
 
-    <!-- Spotify Profile -->
-    <p><a href="https://open.spotify.com/user/francisco.moguel28?si=6d4084610adb41a9" target="_blank">My Spotify Profile</a></p>
-
-    <!-- Concert Videos -->
-    <h3>Concert Videos</h3>
-    <div class="concert-videos">
-        <!-- Replace 'path-to-concert-videoX.mp4' with actual video paths -->
-        <video controls>
-            <source src="path-to-concert-video1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video controls>
-            <source src="path-to-concert-video2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video controls>
-            <source src="path-to-concert-video3.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <!-- Spotify and SoundCloud Profiles -->
+    <h3>Find Me On</h3>
+    <div class="logos">
+        <p><a href="https://open.spotify.com/user/francisco.moguel28?si=6d4084610adb41a9" target="_blank">Spotify</a></p>
+        <img src="logos/Spotify_Primary_Logo_RGB_Green.png" alt="Spotify Logo">
+        
+        <p><a href="https://soundcloud.com/francisco-moguel-1032187" target="_blank">SoundCloud</a></p>
+        <img src="logos/soundcloud-logo-soundcloud-icon-transparent-png-1.png" alt="SoundCloud Logo">
     </div>
+
+    <!-- Favorite Bands and Artists with Links -->
+    <h3>Here are some of my favorite bands and artists. You can explore their music on your favorite platforms:</h3>
+    
+    <div class="artist-grid">
+        <div class="artist-item">
+            <p>Grateful Dead / Dead & Co</p>
+            <div class="artist-links">
+                <a href="https://music.apple.com/us/artist/grateful-dead/1273063" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+                <a href="https://open.spotify.com/artist/4TMHGUX5WI7OOm53PqSDAT" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+                <a href="https://www.youtube.com/channel/UCPuuuhmMW7jh6roOrIV9yRw" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+            </div>
+        </div>
+        <div class="artist-item">
+            <p>Pink Floyd</p>
+            <div class="artist-links">
+                <a href="https://music.apple.com/us/artist/pink-floyd/487143" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+                <a href="https://open.spotify.com/artist/0k17h0D3J5VfsdmQ1iZtE9" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+                <a href="https://www.youtube.com/channel/UCY2qt3dw2TQJxvBrDiYGHdQ" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+            </div>
+        </div>
+        <div class="artist-item">
+            <p>Noah Kahan</p>
+            <div class="artist-links">
+                <a href="https://music.apple.com/us/artist/noah-kahan/328583953" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+                <a href="https://open.spotify.com/artist/2RQXRUsr4IW1f3mKyKsy4B" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+                <a href="https://www.youtube.com/channel/UCXY5pi3MbsaP1WEgClmglsA" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+            </div>
+        </div>
+        <div class="artist-item">
+            <p>The Beatles</p>
+            <div class="artist-links">
+                <a href="https://music.apple.com/us/artist/the-beatles/136975" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+                <a href="https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+                <a href="https://www.youtube.com/thebeatles" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+            </div>
+        </div>
+        <div class="artist-item">
+            <p>Eagles</p>
+            <div class="artist-links">
+                <a href="https://music.apple.com/us/artist/eagles/1053549" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+                <a href="https://open.spotify.com/artist/0ECwFtbIWEVNwjlrfc6xoL" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+                <a href="https://www.youtube.com/channel/UCPTypnDNlOZVnD7MY30_YBw" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+            </div>
+        </div>
+        <div class="artist-item">
+            <p>José José</p>
+            <div class="artist-links">
+                <a href="https://music.apple.com/us/artist/jos%C3%A9-jos%C3%A9/333303" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+                <a href="https://open.spotify.com/artist/4mN0qcMxWX8oToqfDPM5yV" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+                <a href="https://www.youtube.com/channel/UCSPwNgHHyAtHanVaGN2LLWA" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+            </div>
+        </div>
+        <div class="artist-item">
+            <p>Juan Gabriel</p>
+            <div class="artist-links">
+                <a href="https://music.apple.com/us/artist/juan-gabriel/295294" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+                <a href="https://open.spotify.com/artist/2MRBDr0crHWE5JwPceFncq" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+                <a href="https://www.youtube.com/channel/UCnLJnKKCxLRsAktAB9iMSeQ" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+            </div>
+        </div>
+        <div class="artist-item">
+            <p>Luis Miguel</p>
+            <div class="artist-links">
+                <a href="https://music.apple.com/us/artist/luis-miguel/336904" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+                <a href="https://open.spotify.com/artist/2nszmSgqreHSdJA3zWPyrW" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+                <a href="https://www.youtube.com/channel/UCQHnOnsryRQmmr6pU3lAupg" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+            </div>
+        </div>
+        <div class="artist-item">
+            <p>Mumford & Sons</p>
+            <div class="artist-links">
+                <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+                <a href="https://open.spotify.com/artist/3gd8FJtBJtkRxdfbTu19U2" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+                <a href="https://www.youtube.com/channel/UCUyVHhyGAR3djWzqlljIN1A" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+            </div>
+        </div>
+        <div class="artist-item">
+            <p>Sons of the East</p>
+            <div class="artist-links"></div>
+                <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+                <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+                <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+            </div>
+        </div>
+        <div class="artist-item">
+            <p>AC/DC</p>
+            <div class="artist-links"></div>
+                <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+                <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+                <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+            </div>
+        </div>
+        <p>Arctic Monkeys</p>
+        <div class="artist-links">
+            <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+            <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+            <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        </div>
+    </div>
+    <div class="artist-item">
+        <p>Bad Bunny</p>
+        <div class="artist-links">
+            <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+            <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+            <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        </div>
+    </div>
+    <div class="artist-item">
+        <p>Feid</p>
+        <div class="artist-links">
+            <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+            <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+            <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        </div>
+    </div>
+    <div class="artist-item">
+        <p>U2</p>
+        <div class="artist-links">
+            <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+            <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+            <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        </div>
+    </div>
+    <div class="artist-item">
+        <p>Frank Ocean</p>
+        <div class="artist-links">
+            <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+            <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+            <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        </div>
+    </div>
+    <div class="artist-item">
+        <p>Genesis</p>
+        <div class="artist-links">
+            <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+            <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+            <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        </div>
+    </div>
+    <div class="artist-item">
+        <p>Phil Collins</p>
+        <div class="artist-links">
+            <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+            <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+            <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        </div>
+    </div>
+    <div class="artist-item">
+        <p>Maná</p>
+        <div class="artist-links">
+            <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+            <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+            <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        </div>
+    </div>
+    <div class="artist-item">
+        <p>Bruce Springsteen</p>
+        <div class="artist-links">
+            <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+            <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+            <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        </div>
+    </div>
+    <div class="artist-item">
+        <p>Creedence Clearwater Revival</p>
+        <div class="artist-links">
+            <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+            <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+            <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        </div>
+    </div>
+    <div class="artist-item">
+        <p>Led Zeppelin</p>
+        <div class="artist-links">
+            <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+            <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+            <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        </div>
+    </div>
+    <div class="artist-item">
+        <p>Fleetwood Mac</p>
+        <div class="artist-links">
+            <a href="apple-music-link" target="_blank"><img src="apple-music-logo.png" alt="Apple Music Logo"></a>
+            <a href="spotify-link" target="_blank"><img src="spotify-logo.png" alt="Spotify Logo"></a>
+            <a href="youtube-link" target="_blank"><img src="youtube-logo.png" alt="YouTube Logo"></a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+
