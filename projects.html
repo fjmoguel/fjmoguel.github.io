@@ -3,35 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francisco Moguel - Projects</title>
+    <title>Francisco Moguel - Running</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f5e6cc; /* Light beige background */
+            background-color: black;
+            color: white;
         }
+
         h1, h3 {
-            color: #333;
+            color: #ddd;
         }
-        .project {
-            background-color: #ffffff; /* White background for each project */
-            border-radius: 15px; /* Rounded corners */
-            padding: 20px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
-        }
+
         a {
             color: #1a73e8;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         ul.nav-bar {
             list-style-type: none;
-            background-color: #d3d3d3;
+            background-color: #333;
             padding: 0;
             margin: 0;
             position: fixed;
@@ -48,7 +46,7 @@
 
         ul.nav-bar li a {
             display: block;
-            color: #4682b4;
+            color: #fff;
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
@@ -63,6 +61,53 @@
             padding-top: 60px;
         }
 
+        .marathon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .marathon {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 20px;
+            width: 45%; /* Adjust the width */
+            border: 2px solid white;
+            align-items: center;
+        }
+
+        /* Zigzag effect */
+        .marathon:nth-child(odd) {
+            margin-left: auto;
+        }
+
+        .marathon:nth-child(even) {
+            margin-right: auto;
+        }
+
+        .marathon-info {
+            display: flex;
+            flex-direction: column;
+            margin-left: 20px;
+        }
+
+        .marathon img {
+            width: 200px;
+            height: auto;
+        }
+
+        .boston-marathon img {
+            width: 300px; /* Make the Boston Marathon image wider */
+        }
+
+        .marathon-logo {
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        /* Fixed footer */
         footer {
             text-align: center;
             padding: 10px 0;
@@ -88,29 +133,89 @@
         <li><a href="https://fjmoguel.github.io/music">Music</a></li>
         <li><a href="https://fjmoguel.github.io/assignments">Assignments</a></li>
     </ul>
-    
-    <!-- Projects Section -->
-    <h1>Projects</h1>
 
-    <!-- MBTA Subway System Run Project -->
-    <div class="project">
-        <h3>Running the MBTA Subway System</h3>
-        <p>This project involved running the 130 km MBTA subway system to raise awareness for mental health. I developed a Python application that planned my running routes using Google Maps API to find the optimal paths between each station. The code analyzed real-time traffic, distances, and terrain to generate the best running routes during my MBTA run.</p>
-        <a href="https://github.com/fjmoguel/MBTA_RUN_CODE" target="_blank">GitHub Link</a>
-    </div>
+    <!-- Running Section -->
+    <div class="content">
+        <h1>Running</h1>
+        <p>
+            I have completed four major marathons: London, NYC, Boston, and Chicago, along with over 25 half marathons. I am also proud to have completed the entire MBTA subway system (130 km) to raise awareness for mental health.
+        </p>
+        <ul>
+            <li><a href="https://www.strava.com/athletes/francisco_moguel" target="_blank">My Strava Profile</a></li>
+            <li><a href="https://www.instagram.com/p/C_qpfcJPzhJ/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==" target="_blank">MBTA Run for Mental Health Awareness</a></li>
+        </ul>
 
-    <!-- CS411 Project -->
-    <div class="project">
-        <h3>CS411 Project: Advanced Data Analytics</h3>
-        <p>This project focused on developing a Twitter API application to scan user profiles, track followers, and analyze event interests using AI matching algorithms for optimized results. The project used OAuth for authentication, implemented with Node.js and Passport. API calls to Twitter and Ticketmaster were made using Postman, and I developed both the back end and front end using Python, HTML, and CSS. This included integrating data into Google Maps to display local events. The project involved full-stack development, allowing users to find events based on their interests.</p>
-        <a href="https://github.com/vkang6378/CS411_project" target="_blank">GitHub Link</a>
-    </div>
+        <!-- Marathon Containers in Zigzag Layout -->
+        <div class="marathon">
+            <img src="images/IMG_1156 2.JPG" alt="NYC Marathon">
+            <div class="marathon-info">
+                <h3>New York City Marathon</h3>
+                <p>Date: Nov 6, 2022</p>
+                <p>Finish Time: 4:49:06</p>
+                <img class="marathon-logo" src="logos/ivhn4q7u49fa1.jpg" alt="NYC Marathon Logo">
+            </div>
+        </div>
 
-    <!-- CS350 Projects -->
-    <div class="project">
-        <h3>CS350 Projects: Systems Programming</h3>
-        <p>As part of the BU Systems Programming course (CS350), I worked on a variety of distributed systems projects. These included implementing the RAFT algorithm for distributed consensus, using MapReduce for data processing, working with Amazon DynamoDB, and building distributed applications with Yahoo Pnuts. The problem sets involved building robust systems that could handle failures and ensure data consistency.</p>
-        <a href="https://github.com/fjmoguel/CS_350_BostonU" target="_blank">GitHub Link</a>
+        <div class="marathon boston-marathon">
+            <img src="images/IMG_2764 2.JPG" alt="Boston Marathon">
+            <div class="marathon-info">
+                <h3>Boston Marathon</h3>
+                <p>Date: Apr 17, 2023</p>
+                <p>Finish Time: 4:15:01</p>
+                <img class="marathon-logo" src="logos/2023_Boston_Marathon_logo.png" alt="Boston Marathon Logo">
+            </div>
+        </div>
+
+        <div class="marathon">
+            <img src="images/IMG_8333 2.JPG" alt="London Marathon">
+            <div class="marathon-info">
+                <h3>London Marathon</h3>
+                <p>Date: Apr 21, 2024</p>
+                <p>Finish Time: 4:31:46</p>
+                <img class="marathon-logo" src="logos/Untitledtcs-london-marathon-logo.png" alt="London Marathon Logo">
+            </div>
+        </div>
+
+        <div class="marathon">
+            <img src="path-to-chicago-marathon-photo.jpg" alt="Chicago Marathon">
+            <div class="marathon-info">
+                <h3>Chicago Marathon</h3>
+                <p>Next Race: Oct 13, 2024</p>
+                <img class="marathon-logo" src="path-to-chicago-logo.png" alt="Chicago Marathon Logo">
+            </div>
+        </div>
+
+        <div class="marathon">
+            <img src="path-to-tokyo-marathon-photo.jpg" alt="Tokyo Marathon">
+            <div class="marathon-info">
+                <h3>Tokyo Marathon</h3>
+                <p>Next Race: March 2025</p>
+                <img class="marathon-logo" src="path-to-tokyo-logo.png" alt="Tokyo Marathon Logo">
+            </div>
+        </div>
+
+        <div class="marathon">
+            <img src="path-to-berlin-marathon-photo.jpg" alt="Berlin Marathon">
+            <div class="marathon-info">
+                <h3>Berlin Marathon</h3>
+                <p>Next Race: Sep 2025</p>
+                <img class="marathon-logo" src="path-to-berlin-logo.png" alt="Berlin Marathon Logo">
+            </div>
+        </div>
+
+        <!-- MBTA Run Container -->
+        <div class="marathon">
+            <img src="images/F7ABFCD7-4A0E-4850-9107-B4B42E4B9222.JPG" alt="MBTA Run">
+            <div class="marathon-info">
+                <h3>MBTA Run</h3>
+                <p>Date: Sep 2024</p>
+                <p>Distance: 130 km</p>
+                <p>Duration: 8 days</p>
+                <p>Pace: 5:54 min/km</p>
+                <p>Total Running Time: 12:48:27</p>
+                <p>First person to ever complete this run.</p>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
