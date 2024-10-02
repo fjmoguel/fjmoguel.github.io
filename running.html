@@ -13,16 +13,20 @@
             background-color: black;
             color: white;
         }
+
         h1, h3 {
             color: #ddd;
         }
+
         a {
             color: #1a73e8;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         ul.nav-bar {
             list-style-type: none;
             background-color: #333;
@@ -69,16 +73,18 @@
             justify-content: space-between;
             margin: 20px 0;
             padding: 20px;
-            width: 50%; /* Reduce width */
+            width: 45%;
             border: 2px solid white;
+            align-items: center;
         }
 
+        /* Zigzag effect */
         .marathon:nth-child(odd) {
-            flex-direction: row;
+            margin-left: auto;
         }
 
         .marathon:nth-child(even) {
-            flex-direction: row-reverse;
+            margin-right: auto;
         }
 
         .marathon-info {
@@ -93,7 +99,8 @@
         }
 
         .boston-marathon img {
-            width: 300px; /* Make the Boston Marathon image wider */
+            width: 300px;
+            height: 150px; /* Adjust the height */
         }
 
         .marathon-logo {
@@ -101,7 +108,8 @@
             margin-right: 20px;
         }
 
-        .footer {
+        /* Fixed footer */
+        footer {
             text-align: center;
             padding: 10px 0;
             background-color: #d3d3d3;
