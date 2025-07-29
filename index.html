@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Francisco Moguel - Home</title>
-  <link rel="stylesheet" href="css/styles.css"/>
   <style>
     body {
       margin: 0;
@@ -13,6 +12,7 @@
       color: #333;
     }
 
+    /* Navbar */
     ul.nav-bar {
       list-style: none;
       background-color: #d3d3d3;
@@ -43,6 +43,7 @@
       color: black;
     }
 
+    /* Header */
     header {
       padding: 100px 20px 20px;
       text-align: center;
@@ -59,35 +60,36 @@
       color: #666;
     }
 
+    /* Slideshow */
     .slideshow-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 30px 20px;
-      background-color: #fff;
+      position: relative;
+      max-width: 100%;
+      height: 90vh;
+      overflow: hidden;
+      background-color: #000;
     }
 
-    .slideshow-container img {
-      width: calc(25% - 10px);
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    .slide {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      transition: opacity 1s ease-in-out;
     }
 
-    @media (max-width: 768px) {
-      .slideshow-container img {
-        width: calc(50% - 10px);
-      }
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
     }
 
-    @media (max-width: 480px) {
-      .slideshow-container img {
-        width: 100%;
-      }
+    @keyframes fade {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
     }
 
+    /* About Me Section */
     .about {
       max-width: 900px;
       margin: 40px auto;
@@ -109,6 +111,7 @@
       color: #444;
     }
 
+    /* Footer */
     footer {
       text-align: center;
       padding: 10px 0;
@@ -122,6 +125,7 @@
   </style>
 </head>
 <body>
+
   <!-- Navigation Bar -->
   <ul class="nav-bar">
     <li><a href="https://fjmoguel.github.io/">Home</a></li>
@@ -132,57 +136,56 @@
     <li><a href="https://fjmoguel.github.io/running">Running</a></li>
     <li><a href="https://fjmoguel.github.io/photography">Photography</a></li>
     <li><a href="https://fjmoguel.github.io/music">Music</a></li>
-    <li><a href="https://fjmoguel.github.io/assignments">Machine Learning Projects</a></li>
+    <li><a href="https://fjmoguel.github.io/assignments">Assignments</a></li>
   </ul>
 
-  <!-- Header Text -->
+  <!-- Header -->
   <header>
     <h1>Hello, I'm Francisco José Moguel Porte Petit</h1>
     <p>Welcome to my portfolio — bridging computer science, finance, and data-driven innovation.</p>
   </header>
 
-  <!-- Image Gallery -->
+  <!-- Slideshow Section -->
   <div class="slideshow-container">
-    <img src="images/IMG_4217 2.jpg" alt="Slide 1" />
-    <img src="images/6F51FA4E-6B78-4607-AD23-6D1C4560B857 2.jpg" alt="Slide 2" />
-    <img src="images/655C8D7A-0FDC-4479-B7D5-416B3A12D739 2.JPG" alt="Slide 3" />
-    <img src="images/435125aa-9ee8-46a6-b4f9-1b3aa9551c5c 2.JPG" alt="Slide 4" />
-    <img src="images/6f0d3aea-3958-4eed-ac95-357865a995c0 2.JPG" alt="Slide 5" />
-    <img src="images/BUBC_CadeySpencer_012724_0111 2.JPEG" alt="Slide 6" />
-    <img src="images/BF9BD2E7-6B22-401C-9AED-3DD8322DD3E6 2.JPG" alt="Slide 7" />
-    <img src="images/cac79a1e-76b9-45bf-897c-2ee74ad47429 2.JPG" alt="Slide 8" />
-    <img src="images/c1e0923e-5b79-4737-b90f-280b435a012c 2.JPG" alt="Slide 9" />
-    <img src="images/ecd5dd65-5855-4a66-989b-c14b823a541e 2.JPG" alt="Slide 10" />
-    <img src="images/f0ab48ef-b917-4eed-9d08-938f92ab06ba 2.JPG" alt="Slide 11" />
-    <img src="images/GPTempDownload 4.JPG" alt="Slide 12" />
-    <img src="images/GPTempDownload 5.jpg" alt="Slide 13" />
-    <img src="images/GPTempDownload 6.JPG" alt="Slide 14" />
-    <img src="images/IMG_1460 2.HEIC" alt="Slide 15" />
-    <img src="images/IMG_1648 2.HEIC" alt="Slide 16" />
-    <img src="images/IMG_2679 2.JPG" alt="Slide 17" />
-    <img src="images/IMG_1674 2.JPG" alt="Slide 18" />
-    <img src="images/IMG_2679 2.JPG" alt="Slide 19" />
-    <img src="images/IMG_2764 2.JPG" alt="Slide 20" />
-    <img src="images/IMG_3336 2.HEIC" alt="Slide 21" />
-    <img src="images/bb1e5db2-2d90-45f5-9dfe-2cf4a3203576 2.jpg" alt="Slide 22" />
-    <img src="images/IMG_4246 2.HEIC" alt="Slide 23" />
-    <img src="images/IMG_4883 2.HEIC" alt="Slide 24" />
-    <img src="images/IMG_5057 2.JPG" alt="Slide 25" />
-    <img src="images/IMG_6092 2.jpg" alt="Slide 26" />
-    <img src="images/IMG_6231 2.jpg" alt="Slide 27" />
-    <img src="images/IMG_6367 2.jpg" alt="Slide 28" />
-    <img src="images/IMG_6783 2.jpg" alt="Slide 29" />
-    <img src="images/IMG_8331 2.JPG" alt="Slide 30" />
-    <img src="images/IMG_8423 2.JPG" alt="Slide 31" />
-    <img src="images/IMG_8633 2.JPG" alt="Slide 32" />
-    <img src="images/Screenshot 2024-09-11 at 1.32.33 p.m..png" alt="Slide 33" />
+    <div class="slide fade" style="background-image: url('images/IMG_4217 2.jpg');"></div>
+    <div class="slide fade" style="background-image: url('images/6F51FA4E-6B78-4607-AD23-6D1C4560B857 2.jpg');"></div>
+    <div class="slide fade" style="background-image: url('images/655C8D7A-0FDC-4479-B7D5-416B3A12D739 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/435125aa-9ee8-46a6-b4f9-1b3aa9551c5c 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/6f0d3aea-3958-4eed-ac95-357865a995c0 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/BUBC_CadeySpencer_012724_0111 2.JPEG');"></div>
+    <div class="slide fade" style="background-image: url('images/BF9BD2E7-6B22-401C-9AED-3DD8322DD3E6 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/cac79a1e-76b9-45bf-897c-2ee74ad47429 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/c1e0923e-5b79-4737-b90f-280b435a012c 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/ecd5dd65-5855-4a66-989b-c14b823a541e 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/f0ab48ef-b917-4eed-9d08-938f92ab06ba 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/GPTempDownload 4.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/GPTempDownload 5.jpg');"></div>
+    <div class="slide fade" style="background-image: url('images/GPTempDownload 6.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_1460 2.HEIC');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_1648 2.HEIC');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_2679 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_1674 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_2764 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_3336 2.HEIC');"></div>
+    <div class="slide fade" style="background-image: url('images/bb1e5db2-2d90-45f5-9dfe-2cf4a3203576 2.jpg');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_4246 2.HEIC');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_4883 2.HEIC');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_5057 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_6092 2.jpg');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_6231 2.jpg');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_6367 2.jpg');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_6783 2.jpg');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_8331 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_8423 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/IMG_8633 2.JPG');"></div>
+    <div class="slide fade" style="background-image: url('images/Screenshot 2024-09-11 at 1.32.33 p.m..png');"></div>
   </div>
 
   <!-- About Section -->
   <div class="about">
     <h2>About Me</h2>
     <p>
-      A proud Boston University alumni who majored in Computer Science (Machine Learning and Theoretical CS focus) with a minor in Business Administration, graduated May 2025.
+      A proud Boston University alum who majored in Computer Science (Machine Learning and Theoretical CS focus) with a minor in Business Administration, graduated May 2025.
       Currently a University of Texas McCombs School of Business M.S Student in IT & Management.
       I’ve completed marathons in London, NYC, Boston, Chicago and Tokyo, and ran the entire MBTA subway system (130 km) to raise awareness for mental health.
       Originally from Mexico, I’m passionate about machine learning, finance, and using analytics to solve real-world challenges.
@@ -195,5 +198,22 @@
   <footer>
     © Francisco Moguel. All rights reserved.
   </footer>
+
+  <!-- Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 5000); // 5 seconds
+    }
+  </script>
 </body>
 </html>
