@@ -10,18 +10,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #fffbea; /* Cream background */
+            background-color: #fffbea;
         }
         h1, h3 {
             color: #333;
         }
 
         .assignment {
-            background-color: #d3ecf8; /* Light blue background for assignments */
-            border-radius: 15px; /* Smooth edges */
+            background-color: #d3ecf8;
+            border-radius: 15px;
             padding: 20px;
             margin-bottom: 40px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         a {
@@ -32,28 +32,42 @@
             text-decoration: underline;
         }
 
-        ul.nav-bar {
-            list-style-type: none;
-            background-color: #d3d3d3;
-            padding: 0;
-            margin: 0;
+        .nav-bar-wrapper {
             position: fixed;
             top: 0;
             width: 100%;
-            display: flex;
-            justify-content: center;
+            background-color: #d3d3d3;
             z-index: 1000;
         }
 
+        .nav-bar-toggle {
+            display: none;
+            padding: 14px 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #4682b4;
+        }
+
+        ul.nav-bar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         ul.nav-bar li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
         ul.nav-bar li a {
             display: block;
             color: #4682b4;
             text-align: center;
-            padding: 14px 20px;
+            padding: 14px 12px;
             text-decoration: none;
         }
 
@@ -62,8 +76,26 @@
             color: black;
         }
 
+        @media (max-width: 900px) {
+            .nav-bar-toggle {
+                display: block;
+                width: 100%;
+                background-color: #b0b0b0;
+            }
+
+            ul.nav-bar {
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            ul.nav-bar.show {
+                display: flex;
+            }
+        }
+
         .content {
-            padding-top: 60px;
+            padding-top: 80px;
         }
 
         .video-container {
@@ -75,10 +107,9 @@
             max-width: 800px;
             height: auto;
             border: 1px solid #ccc;
-            border-radius: 10px; /* Smooth edges for video */
+            border-radius: 10px;
         }
 
-        /* Footer Styling */
         footer {
             text-align: center;
             padding: 10px 0;
@@ -92,23 +123,26 @@
     </style>
 </head>
 <body>
-    <!-- Work Experience Section -->
-    <h1>My Assignments</h1>
-    <!-- Navigation Bar -->
-    <ul class="nav-bar">
-    <li><a href="https://fjmoguel.github.io/">Home</a></li>
-    <li><a href="https://fjmoguel.github.io/">About Me</a></li>
-    <li><a href="https://fjmoguel.github.io/work-experience">Work Experience</a></li>
-    <li><a href="https://fjmoguel.github.io/assignments">Machine Learning Projects</a></li>
-    <li><a href="https://fjmoguel.github.io/projects">Python Projects</a></li>
-    <li><a href="https://fjmoguel.github.io/react-projects">React Projects</a></li>
-    <li><a href="https://fjmoguel.github.io/contact">Contact</a></li>
-    <li><a href="https://fjmoguel.github.io/running">Running</a></li>
-    <li><a href="https://fjmoguel.github.io/photography">Photography</a></li>
-    <li><a href="https://fjmoguel.github.io/music">Music</a></li>
-  </ul>
+    <div class="nav-bar-wrapper">
+        <button class="nav-bar-toggle" onclick="toggleNav()">☰ Menu</button>
+        <ul class="nav-bar" id="navbar">
+            <li><a href="https://fjmoguel.github.io/">Home</a></li>
+            <li><a href="https://fjmoguel.github.io/">About Me</a></li>
+            <li><a href="https://fjmoguel.github.io/work-experience">Work Experience</a></li>
+            <li><a href="https://fjmoguel.github.io/assignments">Machine Learning Projects</a></li>
+            <li><a href="https://fjmoguel.github.io/projects">Python Projects</a></li>
+            <li><a href="https://fjmoguel.github.io/react-projects">React Projects</a></li>
+            <li><a href="https://fjmoguel.github.io/contact">Contact</a></li>
+            <li><a href="https://fjmoguel.github.io/running">Running</a></li>
+            <li><a href="https://fjmoguel.github.io/photography">Photography</a></li>
+            <li><a href="https://fjmoguel.github.io/music">Music</a></li>
+        </ul>
+    </div>
 
-    <!-- Assignment 1 -->
+    <div class="content">
+        <h1>My Assignments</h1>
+
+        <!-- Assignment 1 -->
     <div class="assignment">
         <h3>Assignment 1: Data Collection and Analysis</h3>
         <p>This assignment focused on collecting and analyzing elevator arrival data to determine the optimal location to wait in the CDS lobby, minimizing the expected walking distance to the next arriving elevator. I implemented solutions by calculating the average inter-arrival times of the elevators, determining probabilities based on these times, and using weighted averages to identify the best waiting position.</p>
@@ -263,9 +297,16 @@
         <a href="https://github.com/fjmoguel/fjmoguel-final-CS506" target="_blank">GitHub Link</a>
     </div>
 
-    <!-- Footer -->
+    </div>
+
     <footer>
         © Francisco Moguel. All rights reserved.
     </footer>
+
+    <script>
+        function toggleNav() {
+            document.getElementById("navbar").classList.toggle("show");
+        }
+    </script>
 </body>
 </html>

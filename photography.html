@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #013220; /* Dark elegant green */
+            background-color: #013220;
             color: white;
         }
         h1 {
@@ -19,7 +19,7 @@
             padding: 10px;
             border-radius: 10px;
             display: inline-block;
-            margin-top: 100px; /* Moved the title lower */
+            margin-top: 100px;
         }
         .link-container {
             text-align: center;
@@ -41,29 +41,42 @@
             text-decoration: underline;
         }
 
-        /* Navigation Bar */
-        ul.nav-bar {
-            list-style-type: none;
-            background-color: #d3d3d3;
-            padding: 0;
-            margin: 0;
+        .nav-bar-wrapper {
             position: fixed;
             top: 0;
             width: 100%;
+            background-color: #d3d3d3;
+            z-index: 1000;
+        }
+
+        .nav-bar-toggle {
+            display: none;
+            padding: 14px 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #4682b4;
+        }
+
+        ul.nav-bar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            z-index: 1000; /* Ensure it stays on top */
         }
 
         ul.nav-bar li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
         ul.nav-bar li a {
             display: block;
             color: #4682b4;
             text-align: center;
-            padding: 14px 20px;
+            padding: 14px 12px;
             text-decoration: none;
         }
 
@@ -72,14 +85,32 @@
             color: black;
         }
 
+        @media (max-width: 900px) {
+            .nav-bar-toggle {
+                display: block;
+                width: 100%;
+                background-color: #b0b0b0;
+            }
+
+            ul.nav-bar {
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            ul.nav-bar.show {
+                display: flex;
+            }
+        }
+
         .slideshow-container {
             position: relative;
-            max-width: 70%;
-            margin: 60px auto; /* Adjusted margin for nav bar */
+            max-width: 90%;
+            margin: 60px auto;
             height: 70vh;
-            background-color: #e0cda9; /* Old map type of color */
-            border-radius: 15px; /* Smooth edges */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Polaroid-like frame effect */
+            background-color: #e0cda9;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             padding: 10px;
         }
 
@@ -90,14 +121,9 @@
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-        }
-
-        /* Smooth transition */
-        .slides {
             transition: opacity 1s ease-in-out;
         }
 
-        /* Footer Styling */
         footer {
             text-align: center;
             padding: 10px 0;
@@ -112,30 +138,29 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <ul class="nav-bar">
-        <li><a href="https://fjmoguel.github.io/">Home</a></li>
-        <li><a href="https://fjmoguel.github.io/">About Me</a></li>
-        <li><a href="https://fjmoguel.github.io/work-experience">Work Experience</a></li>
-        <li><a href="https://fjmoguel.github.io/assignments">Machine Learning Projects</a></li>
-        <li><a href="https://fjmoguel.github.io/projects">Python Projects</a></li>
-        <li><a href="https://fjmoguel.github.io/react-projects">React Projects</a></li>
-        <li><a href="https://fjmoguel.github.io/contact">Contact</a></li>
-        <li><a href="https://fjmoguel.github.io/running">Running</a></li>
-        <li><a href="https://fjmoguel.github.io/photography">Photography</a></li>
-        <li><a href="https://fjmoguel.github.io/music">Music</a></li>
-    </ul>
+    <div class="nav-bar-wrapper">
+        <button class="nav-bar-toggle" onclick="toggleNav()">☰ Menu</button>
+        <ul class="nav-bar" id="navbar">
+            <li><a href="https://fjmoguel.github.io/">Home</a></li>
+            <li><a href="https://fjmoguel.github.io/">About Me</a></li>
+            <li><a href="https://fjmoguel.github.io/work-experience">Work Experience</a></li>
+            <li><a href="https://fjmoguel.github.io/assignments">Machine Learning Projects</a></li>
+            <li><a href="https://fjmoguel.github.io/projects">Python Projects</a></li>
+            <li><a href="https://fjmoguel.github.io/react-projects">React Projects</a></li>
+            <li><a href="https://fjmoguel.github.io/contact">Contact</a></li>
+            <li><a href="https://fjmoguel.github.io/running">Running</a></li>
+            <li><a href="https://fjmoguel.github.io/photography">Photography</a></li>
+            <li><a href="https://fjmoguel.github.io/music">Music</a></li>
+        </ul>
+    </div>
 
-    <!-- Title Section -->
     <h1>Photography</h1>
 
-    <!-- Links Section -->
     <div class="link-container">
         Instagram: <a href="https://www.instagram.com/animanaturae_/" target="_blank">animanaturae_</a> |
         VSCO: <a href="https://vsco.co/pacomoguelp" target="_blank">VSCO</a>
     </div>
 
-    <!-- Slideshow Section -->
     <div class="slideshow-container">
         <div class="slides" style="background-image: url('images/28322464_Unknown 2.JPG');"></div>
         <div class="slides" style="background-image: url('images/9CC625AE-667C-4C2A-9F85-4AA4A70872A0 2.JPG');"></div>
@@ -159,13 +184,15 @@
         <div class="slides" style="background-image: url('images/IMG_8291 2.HEIC');"></div>
     </div>
 
-    <!-- Footer -->
     <footer>
         © Francisco Moguel. All rights reserved.
     </footer>
 
-    <!-- Slideshow Script -->
     <script>
+        function toggleNav() {
+            document.getElementById("navbar").classList.toggle("show");
+        }
+
         let slideIndex = 0;
         showSlides();
 
@@ -178,7 +205,7 @@
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex - 1].style.display = "block";  
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
+            setTimeout(showSlides, 5000);
         }
     </script>
 </body>

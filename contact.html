@@ -7,61 +7,71 @@
     <link rel="stylesheet" href="css/styles.css">
     <style>
         body {
-            font-family: 'Georgia', serif; /* Elegant font */
+            font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000; /* Black background */
-            color: white; /* White text for contrast */
-            text-align: center; /* Center text alignment */
+            background-color: #000;
+            color: white;
+            text-align: center;
         }
         h1 {
-            color: white; /* White for header */
-            font-size: 36px; /* Larger font for an elegant look */
-            margin-bottom: 30px; /* Space below title */
+            color: white;
+            font-size: 36px;
+            margin: 120px 0 30px 0;
         }
-        ul {
+        ul.contact-info {
             list-style-type: none;
             padding: 0;
         }
-        li {
-            margin-bottom: 15px; /* More space between contacts */
-            font-size: 20px; /* Larger font for readability and elegance */
+        ul.contact-info li {
+            margin-bottom: 15px;
+            font-size: 20px;
         }
         a {
-            color: white; /* White links */
+            color: white;
             text-decoration: none;
-            font-weight: bold; /* Bold links to make them stand out */
+            font-weight: bold;
         }
         a:hover {
             text-decoration: underline;
         }
 
-        ul.nav-bar {
-            list-style-type: none;
-            background-color: #d3d3d3;
-            padding: 0;
-            margin: 0;
+        .nav-bar-wrapper {
             position: fixed;
             top: 0;
             width: 100%;
-            display: flex;
-            justify-content: center;
+            background-color: #d3d3d3;
             z-index: 1000;
         }
 
+        .nav-bar-toggle {
+            display: none;
+            padding: 14px 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #4682b4;
+        }
+
+        ul.nav-bar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         ul.nav-bar li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
         ul.nav-bar li a {
             display: block;
             color: #4682b4;
             text-align: center;
-            padding: 14px 20px;
+            padding: 14px 12px;
             text-decoration: none;
         }
 
@@ -70,7 +80,33 @@
             color: black;
         }
 
-        /* Footer Styling */
+        @media (max-width: 900px) {
+            .nav-bar-toggle {
+                display: block;
+                width: 100%;
+                background-color: #b0b0b0;
+            }
+
+            ul.nav-bar {
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+
+            ul.nav-bar.show {
+                display: flex;
+            }
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 0 20px;
+        }
+
         footer {
             text-align: center;
             padding: 10px 0;
@@ -81,38 +117,28 @@
             bottom: 0;
             z-index: 1000;
         }
-
-        /* Center content in the middle of the page */
-        .content-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            height: 100%;
-        }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <ul class="nav-bar">
-        <li><a href="https://fjmoguel.github.io/">Home</a></li>
-        <li><a href="https://fjmoguel.github.io/">About Me</a></li>
-        <li><a href="https://fjmoguel.github.io/work-experience">Work Experience</a></li>
-        <li><a href="https://fjmoguel.github.io/assignments">Machine Learning Projects</a></li>
-        <li><a href="https://fjmoguel.github.io/projects">Python Projects</a></li>
-        <li><a href="https://fjmoguel.github.io/react-projects">React Projects</a></li>
-        <li><a href="https://fjmoguel.github.io/contact">Contact</a></li>
-        <li><a href="https://fjmoguel.github.io/running">Running</a></li>
-        <li><a href="https://fjmoguel.github.io/photography">Photography</a></li>
-        <li><a href="https://fjmoguel.github.io/music">Music</a></li>
-    </ul>
+    <div class="nav-bar-wrapper">
+        <button class="nav-bar-toggle" onclick="toggleNav()">☰ Menu</button>
+        <ul class="nav-bar" id="navbar">
+            <li><a href="https://fjmoguel.github.io/">Home</a></li>
+            <li><a href="https://fjmoguel.github.io/">About Me</a></li>
+            <li><a href="https://fjmoguel.github.io/work-experience">Work Experience</a></li>
+            <li><a href="https://fjmoguel.github.io/assignments">Machine Learning Projects</a></li>
+            <li><a href="https://fjmoguel.github.io/projects">Python Projects</a></li>
+            <li><a href="https://fjmoguel.github.io/react-projects">React Projects</a></li>
+            <li><a href="https://fjmoguel.github.io/contact">Contact</a></li>
+            <li><a href="https://fjmoguel.github.io/running">Running</a></li>
+            <li><a href="https://fjmoguel.github.io/photography">Photography</a></li>
+            <li><a href="https://fjmoguel.github.io/music">Music</a></li>
+        </ul>
+    </div>
 
-    <!-- Content Container to Center Elements -->
     <div class="content-container">
-        <!-- Contact Section -->
         <h1>Contact Information</h1>
-        <ul>
+        <ul class="contact-info">
             <li>Email: <a href="mailto:fjmoguel@bu.edu">fjmoguel@bu.edu</a></li>
             <li>Personal Email: <a href="mailto:francisco.moguel28@gmail.com">francisco.moguel28@gmail.com</a></li>
             <li>LinkedIn: <a href="https://www.linkedin.com/in/franciscomoguel" target="_blank">https://www.linkedin.com/in/franciscomoguel</a></li>
@@ -120,9 +146,14 @@
         </ul>
     </div>
 
-    <!-- Footer -->
     <footer>
         © Francisco Moguel. All rights reserved.
     </footer>
+
+    <script>
+        function toggleNav() {
+            document.getElementById("navbar").classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
