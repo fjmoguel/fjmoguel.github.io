@@ -23,48 +23,93 @@
         a:hover {
             text-decoration: underline;
         }
-        ul.nav-bar {
-            list-style-type: none;
+
+        nav {
             background-color: #333;
-            padding: 0;
-            margin: 0;
             position: fixed;
             top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
+            left: 0;
+            right: 0;
             z-index: 1000;
         }
 
-        ul.nav-bar li {
-            margin: 0 15px;
+        .nav-container {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
         }
 
-        ul.nav-bar li a {
-            display: block;
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            background: white;
+            height: 2px;
+            width: 25px;
+            margin: 4px 0;
+        }
+
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links a {
             color: white;
-            text-align: center;
-            padding: 14px 20px;
+            display: block;
+            padding: 14px;
             text-decoration: none;
         }
 
-        ul.nav-bar li a:hover {
+        .nav-links a:hover {
             background-color: #555;
         }
 
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                display: none;
+                background-color: #333;
+                width: 100%;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+
         .content {
-            padding-top: 60px;
+            padding-top: 80px;
         }
 
         .logos {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
             margin-bottom: 20px;
         }
 
         .logos img {
             width: 30px;
-            margin-left: 10px;
         }
 
         .artist-links img {
@@ -72,10 +117,9 @@
             margin-left: 5px;
         }
 
-        /* Grid display for artist list */
         .artist-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
         }
 
@@ -83,47 +127,45 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
         }
-
-        .artist-links img {
-            width: 20px;
-            margin-left: 5px;
-        }
-
     </style>
 </head>
 <body>
-    <!-- Music Space -->
-    <h1>Music Space</h1>
     <!-- Navigation Bar -->
-    <ul class="nav-bar">
-        <li><a href="https://fjmoguel.github.io/">Home</a></li>
-        <li><a href="https://fjmoguel.github.io/">About Me</a></li>
-        <li><a href="https://fjmoguel.github.io/work-experience">Work Experience</a></li>
-        <li><a href="https://fjmoguel.github.io/assignments">Machine Learning Projects</a></li>
-        <li><a href="https://fjmoguel.github.io/projects">Python Projects</a></li>
-        <li><a href="https://fjmoguel.github.io/react-projects">React Projects</a></li>
-        <li><a href="https://fjmoguel.github.io/contact">Contact</a></li>
-        <li><a href="https://fjmoguel.github.io/running">Running</a></li>
-        <li><a href="https://fjmoguel.github.io/photography">Photography</a></li>
-        <li><a href="https://fjmoguel.github.io/music">Music</a></li>
-    </ul>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="https://fjmoguel.github.io/">Home</a></li>
+                <li><a href="https://fjmoguel.github.io/">About Me</a></li>
+                <li><a href="https://fjmoguel.github.io/work-experience">Work Experience</a></li>
+                <li><a href="https://fjmoguel.github.io/assignments">Machine Learning Projects</a></li>
+                <li><a href="https://fjmoguel.github.io/projects">Python Projects</a></li>
+                <li><a href="https://fjmoguel.github.io/react-projects">React Projects</a></li>
+                <li><a href="https://fjmoguel.github.io/contact">Contact</a></li>
+                <li><a href="https://fjmoguel.github.io/running">Running</a></li>
+                <li><a href="https://fjmoguel.github.io/photography">Photography</a></li>
+                <li><a href="https://fjmoguel.github.io/music">Music</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- Spotify and SoundCloud Profiles -->
-    <h3>Find Me On</h3>
-    <div class="logos">
-        <p><a href="https://open.spotify.com/user/francisco.moguel28?si=6d4084610adb41a9" target="_blank">Spotify</a></p>
-        <img src="logos/Spotify_Primary_Logo_RGB_Green.png" alt="Spotify Logo">
-        
-        <p><a href="https://soundcloud.com/francisco-moguel-1032187" target="_blank">SoundCloud</a></p>
-        <img src="logos/soundcloud-logo-soundcloud-icon-transparent-png-1.png" alt="SoundCloud Logo">
-    </div>
+    <!-- Page Content -->
+    <div class="content">
+        <h1>Music Space</h1>
 
-    <!-- Favorite Bands and Artists with Links -->
-    <h3>Here are some of my favorite bands and artists. You can explore their music on your favorite platforms:</h3>
-    
-    <div class="artist-grid">
-        <div class="artist-item">
+        <h3>Find Me On</h3>
+        <div class="logos">
+            <a href="https://open.spotify.com/user/francisco.moguel28?si=6d4084610adb41a9" target="_blank">Spotify <img src="logos/Spotify_Primary_Logo_RGB_Green.png" alt="Spotify Logo"></a>
+            <a href="https://soundcloud.com/francisco-moguel-1032187" target="_blank">SoundCloud <img src="logos/soundcloud-logo-soundcloud-icon-transparent-png-1.png" alt="SoundCloud Logo"></a>
+        </div>
+
+        <h3>Here are some of my favorite bands and artists. You can explore their music on your favorite platforms:</h3>
+        <div class="artist-grid">
+            <div class="artist-item">
             <p>Grateful Dead / Dead & Co</p>
             <div class="artist-links">
                 <a href="https://music.apple.com/us/artist/grateful-dead/1273063" target="_blank"><img src="logos/apple_music-update_hero_08242021.jpg.news_app_ed.jpg" alt="Apple Music Logo"></a>
@@ -307,6 +349,15 @@
             <a href="youtube-link" target="_blank"><img src="logos/Youtube_logo.png" alt="YouTube Logo"></a>
         </div>
     </div>
-</div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
