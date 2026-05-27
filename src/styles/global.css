@@ -4,21 +4,21 @@
    ════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* Colours */
-  --paper:      #f2eee4;
-  --paper-alt:  #ebe6d8;
-  --card:       #fcfaf4;
-  --ink:        #1b1a16;
-  --ink-soft:   #5c584e;
-  --ink-faint:  #8a857a;
-  --accent:     #bf4827;
-  --accent-deep:#92301a;
-  --line:       rgba(27, 26, 22, 0.13);
-  --shadow:     0 1px 2px rgba(27,26,22,.05), 0 14px 34px -14px rgba(27,26,22,.22);
+  /* Colours — UT Austin palette */
+  --paper:       #f7f3e9;
+  --paper-alt:   #ede6d2;
+  --card:        #fffdf7;
+  --ink:         #1f242a;
+  --ink-soft:    #555c66;
+  --ink-faint:   #8a9098;
+  --accent:      #bf5700;   /* UT Burnt Orange */
+  --accent-deep: #8a3f00;
+  --line:        rgba(31, 36, 42, 0.13);
+  --shadow:      0 1px 2px rgba(31,36,42,.05), 0 14px 34px -14px rgba(31,36,42,.22);
 
   /* Type */
-  --display: "Fraunces", Georgia, serif;
-  --body:    "Hanken Grotesk", "Segoe UI", sans-serif;
+  --display: "Instrument Serif", Georgia, serif;
+  --body:    "Manrope", "Segoe UI", sans-serif;
 
   /* Layout */
   --wrap: 1180px;
