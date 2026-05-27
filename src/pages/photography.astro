@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Slideshow from "../components/Slideshow.astro";
+import { photographyGallery } from "../data/galleries.js";
+
+const links = [
+  { label: "Instagram — animanaturae_", href: "https://www.instagram.com/animanaturae_/" },
+  { label: "VSCO — pacomoguelp", href: "https://vsco.co/pacomoguelp" },
+];
+---
+
+<BaseLayout title="Photography">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Through the lens</p>
+      <h1 class="reveal in">Photography</h1>
+      <p class="lede reveal in">
+        Birds, landscapes and moments from the trail and travels.
+      </p>
+      <div class="linkrow reveal in">
+        {links.map((l) => (
+          <a href={l.href} target="_blank" rel="noopener">{l.label} &nearr;</a>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="reveal">
+        <Slideshow images={photographyGallery} fit="contain" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

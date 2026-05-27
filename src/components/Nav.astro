@@ -1,0 +1,137 @@
+---
+// NAVIGATION — appears on every page. Edit links in src/data/site.js
+import { site, nav } from "../data/site.js";
+
+const current = Astro.url.pathname.replace(/\/+$/, "") || "/";
+function isActive(href) {
+  if (href.includes("#")) return false;        // skip anchor links
+  const target = href.replace(/\/+$/, "") || "/";
+  return target === current;
+}
+---
+
+<header class="hdr">
+  <div class="hdr-inner wrap">
+    <a class="brand" href="/">{site.name}</a>
+
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      {nav.map((item) => (
+        <a href={item.href} class:list={["nav-link", { active: isActive(item.href) }]}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .hdr {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .hdr-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-h);
+  }
+  .brand {
+    font-family: var(--display);
+    font-size: 1.32rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+  .brand:hover { text-decoration: none; color: var(--accent-deep); }
+
+  .nav { display: flex; align-items: center; gap: 2px; }
+  .nav-link {
+    position: relative;
+    font-size: 0.86rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    padding: 8px 11px;
+    border-radius: 7px;
+    white-space: nowrap;
+    transition: color .18s ease, background .18s ease;
+  }
+  .nav-link:hover { color: var(--ink); background: var(--paper-alt); text-decoration: none; }
+  .nav-link.active { color: var(--accent-deep); font-weight: 600; }
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 11px; right: 11px; bottom: 2px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 40px; height: 40px;
+    align-items: center; justify-content: center;
+    background: none; border: 1px solid var(--line);
+    border-radius: 9px; cursor: pointer;
+  }
+  .burger span {
+    width: 19px; height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .burger.open span:nth-child(2) { opacity: 0; }
+  .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 980px) {
+    .burger { display: flex; }
+    .nav {
+      position: fixed;
+      top: var(--header-h);
+      left: 0; right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 28px 20px;
+      box-shadow: var(--shadow);
+      transform: translateY(-12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .nav.open { transform: none; opacity: 1; pointer-events: auto; }
+    .nav-link { font-size: 1rem; padding: 12px 8px; }
+    .nav-link.active::after { left: 8px; right: auto; width: 18px; }
+  }
+</style>
+
+<script>
+  const burger = document.getElementById("burger");
+  const nav = document.getElementById("nav");
+  burger?.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    burger.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", String(open));
+  });
+  // Close the menu when a link is tapped (mobile)
+  nav?.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => {
+      nav.classList.remove("open");
+      burger?.classList.remove("open");
+      burger?.setAttribute("aria-expanded", "false");
+    })
+  );
+</script>

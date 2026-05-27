@@ -1,0 +1,136 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Slideshow from "../components/Slideshow.astro";
+import { site } from "../data/site.js";
+import { bio, stats } from "../data/about.js";
+import { homeGallery } from "../data/galleries.js";
+
+const explore = [
+  { label: "Work & Education", href: "/work-experience", note: "Roles, education and awards" },
+  { label: "Machine Learning", href: "/assignments", note: "12 ML projects and demos" },
+  { label: "Running", href: "/running", note: "Marathons and the MBTA run" },
+  { label: "Photography", href: "/photography", note: "Bird and travel photography" },
+];
+---
+
+<BaseLayout title="Home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text reveal in">
+        <p class="eyebrow">Boston University &middot; UT Austin McCombs</p>
+        <h1>{site.name}</h1>
+        <p class="hero-tag">{site.tagline}</p>
+        <div class="linkrow hero-cta">
+          <a class="btn btn--solid" href="/work-experience">View my work</a>
+          <a class="btn" href="/contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-media reveal in">
+        <Slideshow images={homeGallery} fit="cover" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <div class="about-head reveal">
+        <p class="eyebrow">About</p>
+        <h2>Endurance, curiosity, and analytics.</h2>
+      </div>
+      <div class="about-body reveal">
+        {bio.map((para) => <p>{para}</p>)}
+      </div>
+    </div>
+
+    <div class="wrap stat-strip">
+      {stats.map((s) => (
+        <div class="stat reveal">
+          <span class="stat-num">{s.value}</span>
+          <span class="stat-label">{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section explore-sec">
+    <div class="wrap">
+      <p class="eyebrow reveal">Explore</p>
+      <h2 class="reveal">Wander around the site</h2>
+      <div class="grid explore-grid">
+        {explore.map((e) => (
+          <a class="card explore-card reveal" href={e.href}>
+            <span class="explore-label">{e.label}</span>
+            <span class="explore-note">{e.note}</span>
+            <span class="explore-arrow">&rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero { padding-top: calc(var(--header-h) + 56px); }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 52px;
+    align-items: center;
+  }
+  .hero-tag {
+    font-size: 1.2rem;
+    color: var(--ink-soft);
+    max-width: 34ch;
+    margin: 0 0 26px;
+  }
+  .hero-cta { margin-top: 0; }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 48px;
+    padding-bottom: 48px;
+  }
+  .about-body p { font-size: 1.08rem; }
+  .about-body p:last-child { margin-bottom: 0; }
+
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding-top: 40px;
+    border-top: 1px solid var(--line);
+  }
+  .stat { display: flex; flex-direction: column; gap: 6px; }
+  .stat-num {
+    font-family: var(--display);
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--accent-deep);
+  }
+  .stat-label { font-size: 0.92rem; color: var(--ink-soft); }
+
+  .explore-sec { background: var(--paper-alt); }
+  .explore-grid { margin-top: 28px; }
+  .explore-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: var(--ink);
+  }
+  .explore-card:hover { text-decoration: none; }
+  .explore-label { font-family: var(--display); font-size: 1.3rem; }
+  .explore-note { color: var(--ink-soft); font-size: 0.94rem; }
+  .explore-arrow {
+    margin-top: 10px;
+    color: var(--accent);
+    font-size: 1.2rem;
+    transition: transform .2s ease;
+  }
+  .explore-card:hover .explore-arrow { transform: translateX(6px); }
+
+  @media (max-width: 860px) {
+    .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 32px; }
+    .stat-strip { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  }
+</style>

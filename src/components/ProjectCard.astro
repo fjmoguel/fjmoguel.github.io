@@ -1,0 +1,37 @@
+---
+// PROJECT CARD — used on the ML, Python and React project pages.
+// Props: title, description, links (array of {label, href}), video (optional)
+const { title, description, links = [], video } = Astro.props;
+---
+
+<article class="card proj reveal">
+  <h3>{title}</h3>
+  <p class="proj-desc">{description}</p>
+
+  {video && (
+    <video class="proj-video" controls preload="metadata">
+      <source src={video} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  )}
+
+  {links.length > 0 && (
+    <div class="linkrow">
+      {links.map((l) => (
+        <a href={l.href} target="_blank" rel="noopener">{l.label} &nearr;</a>
+      ))}
+    </div>
+  )}
+</article>
+
+<style>
+  .proj { display: flex; flex-direction: column; }
+  .proj-desc { color: var(--ink-soft); font-size: 0.97rem; margin: 0 0 4px; }
+  .proj-video {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    margin: 14px 0 4px;
+  }
+  .linkrow { margin-top: auto; padding-top: 14px; }
+</style>

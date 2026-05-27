@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { reactProjects } from "../data/reactProjects.js";
+---
+
+<BaseLayout title="React Projects">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Front-end &amp; full-stack</p>
+      <h1 class="reveal in">React Web Projects</h1>
+      <p class="lede reveal in">
+        Component-driven apps with live demos &mdash; artist search, OAuth flows,
+        a URL shortener, and dynamic content rendering with React and Next.js.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid">
+        {reactProjects.map((p) => (
+          <ProjectCard title={p.title} description={p.description} links={p.links} />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

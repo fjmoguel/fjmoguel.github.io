@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { artists, musicProfiles } from "../data/music.js";
+
+// Build a clean list of platform links for each artist, skipping nulls.
+const platforms = [
+  { key: "apple", label: "Apple Music" },
+  { key: "spotify", label: "Spotify" },
+  { key: "youtube", label: "YouTube" },
+];
+---
+
+<BaseLayout title="Music">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Always playing</p>
+      <h1 class="reveal in">Music Space</h1>
+      <p class="lede reveal in">
+        From the Grateful Dead to Juan Gabriel &mdash; the bands and artists on
+        constant rotation, plus where to find me.
+      </p>
+      <div class="linkrow reveal in">
+        {musicProfiles.map((p) => (
+          <a href={p.href} target="_blank" rel="noopener">{p.label} &nearr;</a>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="reveal">Favorite Artists</h2>
+      <div class="grid artist-grid">
+        {artists.map((a) => {
+          const links = platforms.filter((p) => a[p.key]);
+          return (
+            <article class="card artist reveal">
+              <h3>{a.name}</h3>
+              {links.length > 0 ? (
+                <div class="linkrow">
+                  {links.map((p) => (
+                    <a href={a[p.key]} target="_blank" rel="noopener">{p.label}</a>
+                  ))}
+                </div>
+              ) : (
+                <p class="artist-todo">Links coming soon</p>
+              )}
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .artist-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .artist h3 { margin-bottom: 10px; }
+  .artist .linkrow { margin-top: 4px; gap: 10px; }
+  .artist-todo { color: var(--ink-faint); font-size: 0.88rem; margin: 4px 0 0; }
+</style>

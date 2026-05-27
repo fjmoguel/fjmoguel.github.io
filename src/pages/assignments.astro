@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { mlProjects } from "../data/mlProjects.js";
+---
+
+<BaseLayout title="Machine Learning Projects">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow reveal in">CS506 &amp; beyond</p>
+      <h1 class="reveal in">Machine Learning Projects</h1>
+      <p class="lede reveal in">
+        Algorithms built from scratch, interactive visualizations and end-to-end
+        models &mdash; from KMeans and SVD to neural networks and fraud detection.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid">
+        {mlProjects.map((p) => (
+          <ProjectCard
+            title={p.title}
+            description={p.description}
+            video={p.video}
+            links={[{ label: "GitHub", href: p.github }]}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

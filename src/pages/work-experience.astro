@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { education, experience } from "../data/experience.js";
+---
+
+<BaseLayout title="Work & Education">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Experience</p>
+      <h1 class="reveal in">Work &amp; Education</h1>
+      <p class="lede reveal in">
+        Computer science and finance, marathons and mentorship &mdash; a record of
+        the roles, studies and causes I&rsquo;ve been part of.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="reveal">Education &amp; Awards</h2>
+      <div class="timeline">
+        {education.map((ed) => (
+          <article class="card entry reveal">
+            <div class="entry-head">
+              <h3>{ed.school}</h3>
+              <span class="entry-period">{ed.period}</span>
+            </div>
+            <p class="entry-meta">{ed.degree} &middot; {ed.location}</p>
+            {ed.points.length > 0 && (
+              <ul class="entry-points">
+                {ed.points.map((p) => <li>{p}</li>)}
+              </ul>
+            )}
+          </article>
+        ))}
+      </div>
+
+      <h2 class="reveal" style="margin-top:56px">Experience</h2>
+      <div class="timeline">
+        {experience.map((job) => (
+          <article class="card entry reveal">
+            <div class="entry-head">
+              <h3>{job.role} &mdash; {job.org}</h3>
+              <span class="entry-period">{job.period}</span>
+            </div>
+            <p class="entry-meta">{job.location}</p>
+            {job.points.length > 0 && (
+              <ul class="entry-points">
+                {job.points.map((p) => <li>{p}</li>)}
+              </ul>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .timeline { display: flex; flex-direction: column; gap: 20px; margin-top: 22px; }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .entry-head h3 { margin: 0; }
+  .entry-period {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--accent-deep);
+    white-space: nowrap;
+  }
+  .entry-meta { color: var(--ink-soft); font-size: 0.96rem; margin: 6px 0 0; }
+  .entry-points { margin: 14px 0 0; padding-left: 20px; color: var(--ink-soft); }
+  .entry-points li { margin-bottom: 5px; font-size: 0.96rem; }
+</style>

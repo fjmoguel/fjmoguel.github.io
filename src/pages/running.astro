@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { marathons, runningLinks } from "../data/marathons.js";
+---
+
+<BaseLayout title="Running">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow reveal in">26.2 &amp; beyond</p>
+      <h1 class="reveal in">Running</h1>
+      <p class="lede reveal in">
+        Five major marathons &mdash; Tokyo, London, NYC, Boston and Chicago &mdash;
+        plus 40+ half marathons and the entire MBTA subway system, 130 km, run to
+        raise awareness for mental health.
+      </p>
+      <div class="linkrow reveal in">
+        {runningLinks.map((l) => (
+          <a href={l.href} target="_blank" rel="noopener">{l.label} &nearr;</a>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid race-grid">
+        {marathons.map((m) => (
+          <article class="card race reveal">
+            {m.photo && (
+              <div class="race-photo" style={`background-image:url('${m.photo}')`}></div>
+            )}
+            <div class="race-body">
+              <div class="race-title">
+                <h3>{m.name}</h3>
+                {m.upcoming && <span class="badge">Upcoming</span>}
+              </div>
+              <dl class="facts">
+                {m.facts.map((f) => (
+                  <div class="fact">
+                    <dt>{f.label}</dt>
+                    <dd>{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              {m.logo && <img class="race-logo" src={m.logo} alt={`${m.name} logo`} loading="lazy" />}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .race-grid { grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); }
+  .race { padding: 0; overflow: hidden; }
+  .race-photo {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    background-color: #14130f;
+  }
+  .race-body { padding: 22px 24px 24px; }
+  .race-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .race-title h3 { margin: 0; }
+  .badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--accent);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  .facts { margin: 14px 0 0; display: flex; flex-direction: column; gap: 6px; }
+  .fact { display: flex; gap: 10px; font-size: 0.95rem; }
+  .fact dt { color: var(--ink-faint); min-width: 120px; }
+  .fact dd { margin: 0; color: var(--ink); font-weight: 500; }
+  .race-logo { width: 64px; height: auto; margin-top: 16px; opacity: 0.9; }
+</style>

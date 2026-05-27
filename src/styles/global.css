@@ -1,0 +1,166 @@
+/* ════════════════════════════════════════════════════════════════
+   GLOBAL STYLES — the single design system for the whole site.
+   Change a color or font here and every page updates.
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Colours */
+  --paper:      #f2eee4;
+  --paper-alt:  #ebe6d8;
+  --card:       #fcfaf4;
+  --ink:        #1b1a16;
+  --ink-soft:   #5c584e;
+  --ink-faint:  #8a857a;
+  --accent:     #bf4827;
+  --accent-deep:#92301a;
+  --line:       rgba(27, 26, 22, 0.13);
+  --shadow:     0 1px 2px rgba(27,26,22,.05), 0 14px 34px -14px rgba(27,26,22,.22);
+
+  /* Type */
+  --display: "Fraunces", Georgia, serif;
+  --body:    "Hanken Grotesk", "Segoe UI", sans-serif;
+
+  /* Layout */
+  --wrap: 1180px;
+  --header-h: 72px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle paper grain so the background has depth, not flat colour */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--accent-deep); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Typography ─────────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 540;
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.4em;
+}
+h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); }
+h3 { font-size: 1.3rem; letter-spacing: -0.005em; }
+
+p { margin: 0 0 1rem; }
+
+.eyebrow {
+  font-family: var(--body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1rem;
+}
+
+/* ── Layout helpers ─────────────────────────────────────────── */
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+  z-index: 1;
+}
+
+main { display: block; min-height: 60vh; }
+
+.page-head {
+  padding: calc(var(--header-h) + 64px) 0 40px;
+  border-bottom: 1px solid var(--line);
+}
+.page-head p.lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.section { padding: 64px 0; }
+
+/* ── Cards ──────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1px 2px rgba(27,26,22,.05), 0 22px 44px -16px rgba(27,26,22,.3);
+}
+
+.grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* ── Buttons / link rows ────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 11px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  transition: background .2s ease, color .2s ease;
+}
+.btn:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
+.btn--solid { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn--solid:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: #fff; }
+
+.linkrow { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 14px; }
+.linkrow a {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--accent-deep);
+  border-bottom: 1.5px solid transparent;
+}
+.linkrow a:hover { border-bottom-color: var(--accent); text-decoration: none; }
+
+/* ── Reveal-on-scroll animation ─────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}

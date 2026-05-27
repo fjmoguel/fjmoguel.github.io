@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { contact, socials } from "../data/site.js";
+
+const channels = [
+  { label: "University Email", value: contact.emailUniversity, href: `mailto:${contact.emailUniversity}` },
+  { label: "Personal Email", value: contact.emailPersonal, href: `mailto:${contact.emailPersonal}` },
+  ...socials.map((s) => ({ label: s.label, value: s.href.replace(/^https?:\/\/(www\.)?/, ""), href: s.href })),
+];
+---
+
+<BaseLayout title="Contact">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Say hello</p>
+      <h1 class="reveal in">Get in touch</h1>
+      <p class="lede reveal in">
+        Open to opportunities, collaborations and a good conversation about ML,
+        finance or the next marathon. The best ways to reach me:
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <ul class="channels">
+        {channels.map((c) => (
+          <li class="card channel reveal">
+            <span class="channel-label">{c.label}</span>
+            <a class="channel-value" href={c.href} target={c.href.startsWith("mailto:") ? null : "_blank"} rel="noopener">
+              {c.value}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .channels {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 640px;
+  }
+  .channel {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px 24px;
+  }
+  .channel-label {
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .channel-value {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    color: var(--ink);
+    border-bottom: 1.5px solid transparent;
+  }
+  .channel-value:hover { border-bottom-color: var(--accent); text-decoration: none; }
+</style>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { pythonProjects } from "../data/pythonProjects.js";
+---
+
+<BaseLayout title="Python Projects">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow reveal in">Software &amp; data</p>
+      <h1 class="reveal in">Python Projects</h1>
+      <p class="lede reveal in">
+        Full-stack web apps, predictive models and systems work &mdash; built with
+        Django, scikit-learn, and a few well-placed APIs.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid">
+        {pythonProjects.map((p) => (
+          <ProjectCard title={p.title} description={p.description} links={p.links} />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
